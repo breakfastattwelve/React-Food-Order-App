@@ -1,16 +1,15 @@
-import Logo from '../assets/logo.jpg'
+import Logo from "../assets/logo.jpg";
+import Button from "./UI/Button";
 
 function Header() {
   return (
     <header id="main-header">
       <div id="title">
-        <img src={Logo} alt="A restaurant"/>
+        <img src={Logo} alt="A restaurant" />
         <h1>Bite Avenue😋</h1>
       </div>
       <nav>
-        <button>
-            Cart (0)
-        </button>
+        <Button textOnly>Cart (0)</Button>
       </nav>
     </header>
   );
