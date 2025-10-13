@@ -5,7 +5,7 @@ function Header() {
     <header id="main-header">
       <div id="title">
         <img src={Logo} alt="A restaurant"/>
-        <h1>Burnside Burger</h1>
+        <h1>Bite Avenue😋</h1>
       </div>
       <nav>
         <button>
