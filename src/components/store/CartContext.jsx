@@ -5,7 +5,7 @@ export const CartContext = createContext({
     items:[],
     addItem: (item) => {},
     removeItem: (id) => {},
-
+    clearCart:() => {}
 })
 
 // 5.สร้าง Reducer Function
@@ -49,7 +49,8 @@ function cartReducer(state, action){
                 updatedRemoveItems.splice(existingRemoveItemIndex, 1)
             }
             return {  ...state, items: updatedRemoveItems }
-
+        case 'CLEAR_CART':
+            return { ...state, items: [] }
         default:
             return state
     }
@@ -81,6 +82,10 @@ function removeItem(id) {
     })
 }
 
+function clearCart() {
+    dispatch({type: 'CLEAR_CART'})
+}
+
 
 // 7.สร้าง context value
 
@@ -88,6 +93,7 @@ const cartContext = {
     items: cartState.items,     // ข้อมูลจาก state
     addItem: addItem,           // function ที่สร้างไว้
     removeItem: removeItem,
+    clearCart
   }
 
 // 3.Return Provider
